@@ -1,0 +1,3 @@
+<?php
+$GLOBALS['TL_CSS'][] = 'bundles/contaoimmomanagerenergypass/styles/energiebar.css';
+$GLOBALS['TL_JAVASCRIPT'][] = 'bundles/contaoimmomanagerenergypass/scripts/energiebar.js';

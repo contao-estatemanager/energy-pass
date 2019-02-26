@@ -1,0 +1,14 @@
+<div id="expose-energiebar">
+    <div class="pointer" data-value="<?=$this->energieValue?>"><?=$this->energieClass?></div>
+    <div class="bar">
+        <div class="item" data-value="30">A+</div>
+        <div class="item" data-value="50">A</div>
+        <div class="item" data-value="75">B</div>
+        <div class="item" data-value="100">C</div>
+        <div class="item" data-value="130">D</div>
+        <div class="item" data-value="160">E</div>
+        <div class="item" data-value="200">F</div>
+        <div class="item" data-value="250">G</div>
+        <div class="item" data-value="> 250">H</div>
+    </div>
+</div>
