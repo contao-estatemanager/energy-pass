@@ -7,5 +7,10 @@
  * @license   https://github.com/oveleon/contao-immo-manager-bundle/blob/master/LICENSE
  */
 
-// HOOKS
-$GLOBALS['TL_HOOKS']['compileExposeDetails'][] = array('Oveleon\\ContaoImmoManagerEnergyPassBundle\\Energy', 'parseEnergiebar');
+// IMMOMANAGER
+$GLOBALS['TL_IMMOMANAGER_ADDONS'][] = array('Oveleon\\ContaoImmoManagerEnergyPassBundle', 'AddonManager');
+
+if(Oveleon\ContaoImmoManagerEnergyPassBundle\AddonManager::valid()) {
+    // HOOKS
+    $GLOBALS['TL_HOOKS']['compileExposeDetails'][] = array('Oveleon\\ContaoImmoManagerEnergyPassBundle\\Energy', 'parseEnergiebar');
+}
