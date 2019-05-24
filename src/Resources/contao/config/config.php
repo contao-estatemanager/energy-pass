@@ -8,7 +8,6 @@
  * @license   https://github.com/oveleon/contao-immo-manager-bundle/blob/master/LICENSE
  */
 
-
 // IMMOMANAGER
 $GLOBALS['TL_IMMOMANAGER_ADDONS'][] = array('Oveleon\\ContaoImmoManagerEnergyPassBundle', 'AddonManager');
 
