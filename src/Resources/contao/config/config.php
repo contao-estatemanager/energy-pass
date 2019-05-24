@@ -2,7 +2,8 @@
 /**
  * This file is part of Contao EstateManager.
  *
- * @link      https://github.com/oveleon/contao-immo-manager-bundle
+ * @link      https://www.contao-estatemanager.com/
+ * @source    https://github.com/contao-estatemanager/energy-pass
  * @copyright Copyright (c) 2018-2019  Oveleon GbR (https://www.oveleon.de)
  * @license   https://github.com/oveleon/contao-immo-manager-bundle/blob/master/LICENSE
  */
