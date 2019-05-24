@@ -8,9 +8,12 @@
  * @license   https://www.contao-estatemanager.com/lizenzbedingungen.html
  */
 
-$GLOBALS['TL_ESTATEMANAGER_ADDONS'][] = array('ContaoEstateManager\\EnergyPass', 'AddonManager');
+declare(strict_types=1);
 
-if(ContaoEstateManager\EnergyPass\AddonManager::valid()) {
-    // HOOKS
-    $GLOBALS['TL_HOOKS']['compileExposeDetails'][] = array('ContaoEstateManager\\EnergyPass\\Energy', 'parseEnergiebar');
+namespace ContaoEstateManager\EnergyPass;
+
+use Symfony\Component\HttpKernel\Bundle\Bundle;
+
+class EnergyPass extends Bundle
+{
 }

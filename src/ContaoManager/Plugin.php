@@ -10,13 +10,13 @@
 
 declare(strict_types=1);
 
-namespace Oveleon\ContaoImmoManagerEnergyPassBundle\ContaoManager;
+namespace ContaoEstateManager\EnergyPass\ContaoManager;
 
 use Contao\CoreBundle\ContaoCoreBundle;
 use Contao\ManagerPlugin\Bundle\BundlePluginInterface;
 use Contao\ManagerPlugin\Bundle\Config\BundleConfig;
 use Contao\ManagerPlugin\Bundle\Parser\ParserInterface;
-use Oveleon\ContaoImmoManagerEnergyPassBundle\ContaoImmoManagerEnergyPassBundle;
+use ContaoEstateManager\EnergyPass\EnergyPass;
 
 class Plugin implements BundlePluginInterface
 {
@@ -26,9 +26,9 @@ class Plugin implements BundlePluginInterface
     public function getBundles(ParserInterface $parser): array
     {
         return [
-            BundleConfig::create(ContaoImmoManagerEnergyPassBundle::class)
+            BundleConfig::create(EnergyPass::class)
                 ->setLoadAfter([ContaoCoreBundle::class])
-                ->setReplace(['immo-manager-energy-pass']),
+                ->setReplace(['energy-pass']),
         ];
     }
 }

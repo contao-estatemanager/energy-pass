@@ -1,21 +1,21 @@
 {
-  "name":"oveleon/contao-immo-manager-energy-pass-bundle",
+  "name":"contao-estatemanager/energy-pass",
   "type":"contao-bundle",
-  "description":"Manage real estate properties in Cotnao.",
-  "keywords":["contao","immo-manager","immo","real-estate","real estate","estate","property", "energy-pass"],
-  "homepage":"https://oveleon.de/",
+  "description":"Energy-Pass Extension for Contao EstateManager",
+  "keywords":["contao","estatemanager","real estate","estate","property","energy-pass"],
+  "homepage":"https://www.contao-estatemanager.com/",
   "license":"proprietary",
   "authors":[
     {
       "name":"Oveleon",
-      "homepage":"https://oveleon.de/",
+      "homepage":"https://www.oveleon.de/",
       "role":"Developer"
     }
   ],
   "require":{
     "php":">=7.1",
     "contao/core-bundle":"^4.4",
-    "oveleon/contao-immo-manager-bundle": "*"
+    "contao-estatemanager/core": "*"
   },
   "require-dev": {
     "contao/manager-plugin": "^2.0"
@@ -27,7 +27,7 @@
   },
   "autoload":{
     "psr-4": {
-      "Oveleon\\ContaoImmoManagerEnergyPassBundle\\": "src/"
+      "ContaoEstateManager\\EnergyPass\\": "src/"
     },
     "classmap": [
       "src/Resources/contao/"
@@ -40,6 +40,6 @@
     ]
   },
   "extra":{
-    "contao-manager-plugin": "Oveleon\\ContaoImmoManagerEnergyPassBundle\\ContaoManager\\Plugin"
+    "contao-manager-plugin": "ContaoEstateManager\\EnergyPass\\ContaoManager\\Plugin"
   }
 }
