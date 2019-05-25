@@ -10,7 +10,7 @@
 
 namespace ContaoEstateManager\EnergyPass;
 
-use ContaoEstateManager\Core\Translator;
+use ContaoEstateManager\Translator;
 
 class Energy
 {

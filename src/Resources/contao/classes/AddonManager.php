@@ -10,7 +10,7 @@
 
 namespace ContaoEstateManager\EnergyPass;
 
-use ContaoEstateManager\Core\EstateManager;
+use ContaoEstateManager\EstateManager;
 
 class AddonManager
 {
