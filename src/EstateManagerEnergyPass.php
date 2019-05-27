@@ -14,6 +14,6 @@ namespace ContaoEstateManager\EnergyPass;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class EnergyPass extends Bundle
+class EstateManagerEnergyPass extends Bundle
 {
 }
