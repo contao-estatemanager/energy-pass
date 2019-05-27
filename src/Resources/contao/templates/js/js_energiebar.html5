@@ -1,3 +1,3 @@
 <?php
-$GLOBALS['TL_CSS'][] = 'bundles/energypass/styles/energiebar.css';
-$GLOBALS['TL_JAVASCRIPT'][] = 'bundles/energypass/scripts/energiebar.js';
+$GLOBALS['TL_CSS'][] = 'bundles/estatemanagerenergypass/styles/energiebar.css';
+$GLOBALS['TL_JAVASCRIPT'][] = 'bundles/estatemanagerenergypass/scripts/energiebar.js';

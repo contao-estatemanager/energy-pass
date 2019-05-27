@@ -28,7 +28,7 @@ class Plugin implements BundlePluginInterface
         return [
             BundleConfig::create(EstateManagerEnergyPass::class)
                 ->setLoadAfter([ContaoCoreBundle::class])
-                ->setReplace(['energy-pass']),
+                ->setReplace(['estatemanagerenergypass']),
         ];
     }
 }
