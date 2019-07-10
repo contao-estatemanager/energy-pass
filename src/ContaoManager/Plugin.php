@@ -16,7 +16,7 @@ use Contao\CoreBundle\ContaoCoreBundle;
 use Contao\ManagerPlugin\Bundle\BundlePluginInterface;
 use Contao\ManagerPlugin\Bundle\Config\BundleConfig;
 use Contao\ManagerPlugin\Bundle\Parser\ParserInterface;
-use ContaoEstateManager\EnergyPass\EnergyPass;
+use ContaoEstateManager\EnergyPass\EstateManagerEnergyPass;
 
 class Plugin implements BundlePluginInterface
 {
@@ -26,9 +26,9 @@ class Plugin implements BundlePluginInterface
     public function getBundles(ParserInterface $parser): array
     {
         return [
-            BundleConfig::create(EnergyPass::class)
-                ->setLoadAfter([ContaoCoreBundle::class])
-                ->setReplace(['energy-pass']),
+            BundleConfig::create(EstateManagerEnergyPass::class)
+                ->setLoadAfter([ContaoCoreBundle::class, EstateManager::class])
+                ->setReplace(['estatemanager-energy-pass']),
         ];
     }
 }
