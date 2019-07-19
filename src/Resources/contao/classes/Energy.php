@@ -42,6 +42,7 @@ class Energy
             if($detail['key'] === 'energie')
             {
                 $strTemplate = $this->strTemplate;
+                $energyValue = $this->getEnergiepassValue($context->realEstate);
 
                 // set custom Template
                 if($context->energiebarTemplate)
@@ -53,8 +54,37 @@ class Energy
                 $objEnergyTemplate = new \FrontendTemplate($strTemplate);
 
                 // set template information
-                $objEnergyTemplate->energieValue = $this->getEnergiepassValue($context->realEstate);
-                $objEnergyTemplate->energieClass = $context->realEstate->energiepassWertklasse;
+                $objEnergyTemplate->energieValue = $energyValue;
+
+                if($context->realEstate->energiepassWertklasse)
+                {
+                    $objEnergyTemplate->energieClass = $context->realEstate->energiepassWertklasse;
+                }
+                else
+                {
+                    $energyValue = floatval(str_replace( ',', '.', $energyValue));
+
+                    $classes = array(
+                        '30' => 'A+',
+                        '50' => 'A',
+                        '75' => 'B',
+                        '100' => 'C',
+                        '130' => 'D',
+                        '160' => 'E',
+                        '200' => 'F',
+                        '225' => 'G',
+                        '999' => 'H'
+                    );
+
+                    foreach ($classes as $val => $label)
+                    {
+                        if($energyValue < intval($val))
+                        {
+                            $objEnergyTemplate->energieClass = $label;
+                            break;
+                        }
+                    }
+                }
 
                 // create collection and parse Template
                 $htmlEnergy = array(
