@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
             i = 0;
 
         for(; i<items.length; i++){
-            currVal = parseInt(items[i].dataset.value);
+            currVal = parseInt(items[i].dataset.value.replace( /\D/g , ''));
 
             if(val > currVal){
                 prevVal = currVal;
