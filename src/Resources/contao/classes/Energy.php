@@ -86,7 +86,7 @@ class Energy
      */
     public function getEnergiepassValue($realEstate)
     {
-        switch($realEstate->objRealEstate->energiepassEpart)
+        switch(strtolower($realEstate->objRealEstate->energiepassEpart))
         {
             case 'bedarf':
                 return $realEstate->objRealEstate->energiepassEndenergiebedarf;
