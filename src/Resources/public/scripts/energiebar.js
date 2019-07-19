@@ -17,19 +17,23 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
             i = 0;
 
-        for(; i<items.length; i++){
-            currVal = parseInt(items[i].dataset.value.replace( /\D/g , ''));
+        if(val > 249){
+            pointer.style.marginLeft = 100 / barWidth * (barWidth - pointer.offsetWidth) + "%";
+        }else{
+            for(; i<items.length; i++){
+                currVal = parseInt(items[i].dataset.value.replace( /\D/g , ''));
 
-            if(val > currVal){
-                prevVal = currVal;
-                itemOffsetWidth += items[i].offsetWidth;
-            }else{
-                offsetPercent = (val - prevVal) + (currVal / (currVal - prevVal));
-                offsetWidth = (items[i].offsetWidth / 100 * offsetPercent) + itemOffsetWidth;
-                offsetLeft = 100 / barWidth * offsetWidth;
+                if(val > currVal){
+                    prevVal = currVal;
+                    itemOffsetWidth += items[i].offsetWidth;
+                }else{
+                    offsetPercent = (val - prevVal) + (currVal / (currVal - prevVal));
+                    offsetWidth = (items[i].offsetWidth / 100 * offsetPercent) + itemOffsetWidth;
+                    offsetLeft = 100 / barWidth * offsetWidth;
 
-                pointer.style.marginLeft = offsetLeft + '%';
-                break;
+                    pointer.style.marginLeft = offsetLeft + '%';
+                    break;
+                }
             }
         }
     }
