@@ -34,15 +34,15 @@ class Energy
             return;
         }
 
+        $energyValue = $this->getEnergiepassValue($context->realEstate);
         $htmlEnergy = null;
         $index = 0;
 
         foreach ($arrDetails as $detail)
         {
-            if($detail['key'] === 'energie')
+            if($detail['key'] === 'energie' && $energyValue)
             {
                 $strTemplate = $this->strTemplate;
-                $energyValue = $this->getEnergiepassValue($context->realEstate);
 
                 // set custom Template
                 if($context->energiebarTemplate)
@@ -101,7 +101,7 @@ class Energy
         }
 
         // append parsed Template to energy details
-        if($htmlEnergy)
+        if($htmlEnergy !== null)
         {
             $arrDetails[ $index ]['details'][] = $htmlEnergy;
         }
