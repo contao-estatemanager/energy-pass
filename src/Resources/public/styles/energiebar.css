@@ -5,63 +5,71 @@
   background: -moz-linear-gradient(left, #518c37 0%, #feff01 50%, #c52623 99%);
   background: -webkit-linear-gradient(left, #518c37 0%, #feff01 50%, #c52623 99%);
   background: linear-gradient(to right, #518c37 0%, #feff01 50%, #c52623 99%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#518c37', endColorstr='#c52623',GradientType=1 ); }
-  #expose-energiebar .pointer {
-    position: absolute;
-    bottom: 100%;
-    margin-bottom: 10px;
-    padding: 6px;
-    width: 30px;
-    border-radius: 5px;
-    background: #4f4f4f;
-    color: #ffffff;
-    text-align: center;
-    transition: margin-left .5s; }
-    #expose-energiebar .pointer:after {
-      top: 100%;
-      left: 50%;
-      border: solid transparent;
-      content: " ";
-      height: 0;
-      width: 0;
-      position: absolute;
-      pointer-events: none;
-      border-color: rgba(79, 79, 79, 0);
-      border-top-color: #4f4f4f;
-      border-width: 5px;
-      margin-left: -5px; }
-  #expose-energiebar .bar {
-    position: relative;
-    display: flex;
-    padding: 7px 0;
-    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2); }
-    #expose-energiebar .bar .item {
-      position: relative;
-      text-align: center;
-      flex-grow: 1;
-      color: #ffffff;
-      text-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
-      font-size: 15px;
-      border-right: 1px solid #ffffff; }
-      #expose-energiebar .bar .item:after {
-        content: attr(data-value);
-        text-shadow: none;
-        position: absolute;
-        right: 0;
-        top: 100%;
-        margin-top: 13px;
-        font-size: 13px;
-        color: #adadad; }
-      #expose-energiebar .bar .item:last-child {
-        border-right: 0 none; }
-      #expose-energiebar .bar .item:first-child:before {
-        content: '0';
-        text-shadow: none;
-        position: absolute;
-        left: 0;
-        top: 100%;
-        margin-top: 13px;
-        font-size: 13px;
-        color: #adadad; }
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#518c37", endColorstr="#c52623",GradientType=1 );
+}
+#expose-energiebar .pointer {
+  position: absolute;
+  bottom: 100%;
+  margin-bottom: 10px;
+  padding: 6px;
+  width: 30px;
+  border-radius: 5px;
+  background: #4f4f4f;
+  color: #ffffff;
+  text-align: center;
+  transition: margin-left 0.5s;
+}
+#expose-energiebar .pointer:after {
+  top: 100%;
+  left: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: rgba(79, 79, 79, 0);
+  border-top-color: #4f4f4f;
+  border-width: 5px;
+  margin-left: -5px;
+}
+#expose-energiebar .bar {
+  position: relative;
+  display: flex;
+  padding: 7px 0;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+}
+#expose-energiebar .bar .item {
+  position: relative;
+  text-align: center;
+  flex-grow: 1;
+  color: #ffffff;
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+  font-size: 15px;
+  border-right: 1px solid #ffffff;
+}
+#expose-energiebar .bar .item:after {
+  content: attr(data-value);
+  text-shadow: none;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  margin-top: 13px;
+  font-size: 13px;
+  color: #adadad;
+}
+#expose-energiebar .bar .item:last-child {
+  border-right: 0 none;
+}
+#expose-energiebar .bar .item:first-child:before {
+  content: "0";
+  text-shadow: none;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  margin-top: 13px;
+  font-size: 13px;
+  color: #adadad;
+}
 
 /*# sourceMappingURL=energiebar.css.map */
