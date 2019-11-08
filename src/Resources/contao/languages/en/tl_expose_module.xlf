@@ -1,26 +1,21 @@
 <?xml version="1.0" ?>
 <xliff version="1.1">
-  <file datatype="php" original="src/Resources/contao/languages/en/tl_expose_module.php" source-language="en" target-language="de">
+  <file datatype="php" original="src/Resources/contao/languages/en/tl_expose_module.php" source-language="en">
     <body>
       <trans-unit id="tl_expose_module.energy_legend">
         <source>Energy certificate</source>
-        <target>Energieausweis</target>
       </trans-unit>
       <trans-unit id="tl_expose_module.addEnergiebar.0">
         <source>Add energy efficiency scale</source>
-        <target>Energieskala hinzufügen</target>
       </trans-unit>
       <trans-unit id="tl_expose_module.addEnergiebar.1">
         <source>Inserts an energy efficiency scale after the energy certificate.</source>
-        <target>Fügt nach dem Energieausweis eine Energieskala ein</target>
       </trans-unit>
       <trans-unit id="tl_expose_module.energiebarTemplate.0">
         <source>Energy efficiency scale template</source>
-        <target>Energie-Skala Template</target>
       </trans-unit>
       <trans-unit id="tl_expose_module.energiebarTemplate.1">
         <source>Here you can overwrite the default template for the energy efficiency scale.</source>
-        <target>Hier können Sie das Standard-Template für die Energie-Skala überschreiben.</target>
       </trans-unit>
     </body>
   </file>
