@@ -10,6 +10,7 @@
 
 namespace ContaoEstateManager\EnergyPass;
 
+use Contao\FrontendTemplate;
 use ContaoEstateManager\Translator;
 
 class Energy
@@ -51,7 +52,7 @@ class Energy
                 }
 
                 // create Template
-                $objEnergyTemplate = new \FrontendTemplate($strTemplate);
+                $objEnergyTemplate = new FrontendTemplate($strTemplate);
 
                 // set template information
                 $objEnergyTemplate->energieValue = $energyValue;
