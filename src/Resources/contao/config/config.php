@@ -11,6 +11,6 @@
 $GLOBALS['TL_ESTATEMANAGER_ADDONS'][] = array('ContaoEstateManager\\EnergyPass', 'AddonManager');
 
 if(ContaoEstateManager\EnergyPass\AddonManager::valid()) {
-    // HOOKS
+    // Hooks
     $GLOBALS['TL_HOOKS']['compileExposeDetails'][] = array('ContaoEstateManager\\EnergyPass\\Energy', 'parseEnergiebar');
 }
