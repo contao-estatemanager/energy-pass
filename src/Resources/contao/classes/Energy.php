@@ -10,6 +10,7 @@
 
 namespace ContaoEstateManager\EnergyPass;
 
+use Contao\FrontendTemplate;
 use ContaoEstateManager\Translator;
 
 class Energy
@@ -27,7 +28,7 @@ class Energy
      * @param $arrDetails
      * @param $context
      */
-    public function parseEnergiebar(&$objTemplate, &$arrDetails, $context)
+    public function parseEnergiebar(&$objTemplate, &$arrDetails, $context): void
     {
         if(!count($arrDetails) || !!!$context->addEnergiebar)
         {
@@ -51,7 +52,7 @@ class Energy
                 }
 
                 // create Template
-                $objEnergyTemplate = new \FrontendTemplate($strTemplate);
+                $objEnergyTemplate = new FrontendTemplate($strTemplate);
 
                 // set template information
                 $objEnergyTemplate->energieValue = $energyValue;
@@ -114,15 +115,15 @@ class Energy
      *
      * @return string
      */
-    public function getEnergiepassValue($realEstate)
+    public function getEnergiepassValue($realEstate): string
     {
-        switch(strtolower($realEstate->objRealEstate->energiepassEpart))
+        switch(strtolower($realEstate->energiepassEpart))
         {
             case 'bedarf':
-                return $realEstate->objRealEstate->energiepassEndenergiebedarf;
+                return $realEstate->energiepassEndenergiebedarf;
                 break;
             case 'verbrauch':
-                return $realEstate->objRealEstate->energiepassEnergieverbrauchkennwert;
+                return $realEstate->energiepassEnergieverbrauchkennwert;
                 break;
         }
 
