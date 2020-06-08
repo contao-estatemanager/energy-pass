@@ -8,9 +8,9 @@
  * @license   https://www.contao-estatemanager.com/lizenzbedingungen.html
  */
 
-$GLOBALS['TL_ESTATEMANAGER_ADDONS'][] = array('ContaoEstateManager\\EnergyPass', 'AddonManager');
+$GLOBALS['TL_ESTATEMANAGER_ADDONS'][] = array('ContaoEstateManager\EnergyPass', 'AddonManager');
 
 if(ContaoEstateManager\EnergyPass\AddonManager::valid()) {
     // Hooks
-    $GLOBALS['TL_HOOKS']['compileExposeDetails'][] = array('ContaoEstateManager\\EnergyPass\\Energy', 'parseEnergiebar');
+    $GLOBALS['TL_HOOKS']['compileExposeDetails'][] = array('ContaoEstateManager\EnergyPass\Energy', 'parseEnergiebar');
 }
