@@ -117,16 +117,24 @@ class Energy
      */
     public function getEnergiepassValue($realEstate): string
     {
+        $strValue = '';
+
         switch(strtolower($realEstate->energiepassEpart))
         {
             case 'bedarf':
-                return $realEstate->energiepassEndenergiebedarf;
+                if ($realEstate->energiepassEndenergiebedarf)
+                {
+                    $strValue = $realEstate->energiepassEndenergiebedarf;
+                }
                 break;
             case 'verbrauch':
-                return $realEstate->energiepassEnergieverbrauchkennwert;
+                if ($realEstate->energiepassEnergieverbrauchkennwert)
+                {
+                    $strValue = $realEstate->energiepassEnergieverbrauchkennwert;
+                }
                 break;
         }
 
-        return '';
+        return $strValue;
     }
 }
