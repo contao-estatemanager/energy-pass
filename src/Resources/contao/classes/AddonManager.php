@@ -17,10 +17,16 @@ use ContaoEstateManager\EstateManager;
 class AddonManager
 {
     /**
-     * Addon name
+     * Bundle name
      * @var string
      */
-    public static $name = 'Energy';
+    public static $bundle = 'EstateManagerEnergyPass';
+
+    /**
+     * Package
+     * @var string
+     */
+    public static $package = 'contao-estatemanager/energy-pass';
 
     /**
      * Addon config key
