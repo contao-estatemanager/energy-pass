@@ -2,13 +2,23 @@
 /**
  * This file is part of Contao EstateManager.
  *
- * @link      https://www.contao-estatemanager.com/
+ * @see      https://www.contao-estatemanager.com/
  * @source    https://github.com/contao-estatemanager/energy-pass
+ *
  * @copyright Copyright (c) 2019  Oveleon GbR (https://www.oveleon.de)
  * @license   https://www.contao-estatemanager.com/lizenzbedingungen.html
  */
 
 declare(strict_types=1);
+
+/*
+ * This file is part of Contao EstateManager.
+ *
+ * @see        https://www.contao-estatemanager.com/
+ * @source     https://github.com/contao-estatemanager/energy-pass
+ * @copyright  Copyright (c) 2021 Oveleon GbR (https://www.oveleon.de)
+ * @license    https://www.contao-estatemanager.com/lizenzbedingungen.html
+ */
 
 namespace ContaoEstateManager\EnergyPass\ContaoManager;
 
@@ -16,8 +26,8 @@ use Contao\CoreBundle\ContaoCoreBundle;
 use Contao\ManagerPlugin\Bundle\BundlePluginInterface;
 use Contao\ManagerPlugin\Bundle\Config\BundleConfig;
 use Contao\ManagerPlugin\Bundle\Parser\ParserInterface;
-use ContaoEstateManager\EstateManager\EstateManager;
 use ContaoEstateManager\EnergyPass\EstateManagerEnergyPass;
+use ContaoEstateManager\EstateManager\EstateManager;
 
 class Plugin implements BundlePluginInterface
 {

@@ -1,16 +1,22 @@
 <?php
-/**
+
+declare(strict_types=1);
+
+/*
  * This file is part of Contao EstateManager.
  *
- * @link      https://www.contao-estatemanager.com/
- * @source    https://github.com/contao-estatemanager/energy-pass
- * @copyright Copyright (c) 2019  Oveleon GbR (https://www.oveleon.de)
- * @license   https://www.contao-estatemanager.com/lizenzbedingungen.html
+ * @see        https://www.contao-estatemanager.com/
+ * @source     https://github.com/contao-estatemanager/energy-pass
+ * @copyright  Copyright (c) 2021 Oveleon GbR (https://www.oveleon.de)
+ * @license    https://www.contao-estatemanager.com/lizenzbedingungen.html
  */
 
-$GLOBALS['TL_ESTATEMANAGER_ADDONS'][] = array('ContaoEstateManager\EnergyPass', 'AddonManager');
+$GLOBALS['TL_ESTATEMANAGER_ADDONS'][] = ['ContaoEstateManager\EnergyPass', 'AddonManager'];
 
-if(ContaoEstateManager\EnergyPass\AddonManager::valid()) {
+use ContaoEstateManager\EnergyPass\AddonManager;
+
+if (AddonManager::valid())
+{
     // Hooks
-    $GLOBALS['TL_HOOKS']['compileExposeDetails'][] = array('ContaoEstateManager\EnergyPass\Energy', 'parseEnergiebar');
+    $GLOBALS['TL_HOOKS']['compileExposeDetails'][] = ['ContaoEstateManager\EnergyPass\Energy', 'parseEnergiebar'];
 }
