@@ -14,9 +14,10 @@ declare(strict_types=1);
 $GLOBALS['TL_ESTATEMANAGER_ADDONS'][] = ['ContaoEstateManager\EnergyPass', 'AddonManager'];
 
 use ContaoEstateManager\EnergyPass\AddonManager;
+use ContaoEstateManager\EnergyPass\Energy;
 
 if (AddonManager::valid())
 {
     // Hooks
-    $GLOBALS['TL_HOOKS']['compileExposeDetails'][] = ['ContaoEstateManager\EnergyPass\Energy', 'parseEnergiebar'];
+    $GLOBALS['CEM_HOOKS']['compileExposeDetails'][] = [Energy::class, 'parseEnergiebar'];
 }
