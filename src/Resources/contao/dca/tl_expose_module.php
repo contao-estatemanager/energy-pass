@@ -22,7 +22,7 @@ if (AddonManager::valid())
         'label' => &$GLOBALS['TL_LANG']['tl_expose_module']['addEnergiebar'],
         'exclude' => true,
         'inputType' => 'checkbox',
-        'eval' => ['tl_class' => 'w50 m12'],
+        'eval' => ['tl_class' => 'w50'],
         'sql' => "char(1) NOT NULL default '0'",
     ];
 

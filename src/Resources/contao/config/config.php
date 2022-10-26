@@ -19,5 +19,5 @@ use ContaoEstateManager\EnergyPass\Energy;
 if (AddonManager::valid())
 {
     // Hooks
-    $GLOBALS['CEM_HOOKS']['compileExposeDetails'][] = [Energy::class, 'parseEnergiebar'];
+    $GLOBALS['TL_HOOKS']['compileExposeDetails'][] = [Energy::class, 'parseEnergiebar'];
 }
