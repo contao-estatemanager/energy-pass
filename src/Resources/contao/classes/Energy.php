@@ -1,11 +1,14 @@
 <?php
-/**
+
+declare(strict_types=1);
+
+/*
  * This file is part of Contao EstateManager.
  *
- * @link      https://www.contao-estatemanager.com/
- * @source    https://github.com/contao-estatemanager/energy-pass
- * @copyright Copyright (c) 2019  Oveleon GbR (https://www.oveleon.de)
- * @license   https://www.contao-estatemanager.com/lizenzbedingungen.html
+ * @see        https://www.contao-estatemanager.com/
+ * @source     https://github.com/contao-estatemanager/energy-pass
+ * @copyright  Copyright (c) 2021 Oveleon GbR (https://www.oveleon.de)
+ * @license    https://www.contao-estatemanager.com/lizenzbedingungen.html
  */
 
 namespace ContaoEstateManager\EnergyPass;
@@ -16,13 +19,14 @@ use ContaoEstateManager\Translator;
 class Energy
 {
     /**
-     * Template
+     * Template.
+     *
      * @var string
      */
     protected $strTemplate = 'energiebar_default';
 
     /**
-     * Add energie bar for details
+     * Add energie bar for details.
      *
      * @param $objTemplate
      * @param $arrDetails
@@ -30,7 +34,7 @@ class Energy
      */
     public function parseEnergiebar(&$objTemplate, &$arrDetails, $context): void
     {
-        if(!count($arrDetails) || !!!$context->addEnergiebar)
+        if (!\count($arrDetails) || !(bool) $context->addEnergiebar)
         {
             return;
         }
@@ -41,12 +45,12 @@ class Energy
 
         foreach ($arrDetails as $detail)
         {
-            if($detail['key'] === 'energie' && $energyValue)
+            if ('energie' === $detail['key'] && $energyValue)
             {
                 $strTemplate = $this->strTemplate;
 
                 // set custom Template
-                if($context->energiebarTemplate)
+                if ($context->energiebarTemplate)
                 {
                     $strTemplate = $context->energiebarTemplate;
                 }
@@ -57,15 +61,15 @@ class Energy
                 // set template information
                 $objEnergyTemplate->energieValue = $energyValue;
 
-                if($context->realEstate->energiepassWertklasse)
+                if ($context->realEstate->energiepassWertklasse)
                 {
                     $objEnergyTemplate->energieClass = $context->realEstate->energiepassWertklasse;
                 }
                 else
                 {
-                    $energyValue = floatval(str_replace( ',', '.', $energyValue));
+                    $energyValue = (float) (str_replace(',', '.', $energyValue));
 
-                    $classes = array(
+                    $classes = [
                         '30' => 'A+',
                         '50' => 'A',
                         '75' => 'B',
@@ -74,12 +78,12 @@ class Energy
                         '160' => 'E',
                         '200' => 'F',
                         '225' => 'G',
-                        '999' => 'H'
-                    );
+                        '999' => 'H',
+                    ];
 
                     foreach ($classes as $val => $label)
                     {
-                        if($energyValue < intval($val))
+                        if ($energyValue < (int) $val)
                         {
                             $objEnergyTemplate->energieClass = $label;
                             break;
@@ -88,38 +92,36 @@ class Energy
                 }
 
                 // create collection and parse Template
-                $htmlEnergy = array(
-                    'key'   => 'energiebar',
+                $htmlEnergy = [
+                    'key' => 'energiebar',
                     'label' => Translator::translateExpose('label_energiebar'),
                     'class' => 'scala',
-                    'value' => $objEnergyTemplate->parse()
-                );
+                    'value' => $objEnergyTemplate->parse(),
+                ];
 
                 break;
             }
 
-            $index++;
+            ++$index;
         }
 
         // append parsed Template to energy details
-        if($htmlEnergy !== null)
+        if (null !== $htmlEnergy)
         {
-            $arrDetails[ $index ]['details'][] = $htmlEnergy;
+            $arrDetails[$index]['details'][] = $htmlEnergy;
         }
     }
 
     /**
-     * Returns the correct energy value
+     * Returns the correct energy value.
      *
      * @param $realEstate
-     *
-     * @return string
      */
     public function getEnergiepassValue($realEstate): string
     {
         $strValue = '';
 
-        switch(strtolower($realEstate->energiepassEpart))
+        switch (strtolower($realEstate->energiepassEpart))
         {
             case 'bedarf':
                 if ($realEstate->energiepassEndenergiebedarf)
@@ -127,6 +129,7 @@ class Energy
                     $strValue = $realEstate->energiepassEndenergiebedarf;
                 }
                 break;
+
             case 'verbrauch':
                 if ($realEstate->energiepassEnergieverbrauchkennwert)
                 {
