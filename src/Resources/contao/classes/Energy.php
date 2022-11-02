@@ -121,21 +121,24 @@ class Energy
     {
         $strValue = '';
 
-        switch (strtolower($realEstate->energiepassEpart))
+        if (isset($realEstate->energiepassEpart))
         {
-            case 'bedarf':
-                if ($realEstate->energiepassEndenergiebedarf)
-                {
-                    $strValue = $realEstate->energiepassEndenergiebedarf;
-                }
-                break;
+            switch (strtolower($realEstate->energiepassEpart))
+            {
+                case 'bedarf':
+                    if ($realEstate->energiepassEndenergiebedarf)
+                    {
+                        $strValue = $realEstate->energiepassEndenergiebedarf;
+                    }
+                    break;
 
-            case 'verbrauch':
-                if ($realEstate->energiepassEnergieverbrauchkennwert)
-                {
-                    $strValue = $realEstate->energiepassEnergieverbrauchkennwert;
-                }
-                break;
+                case 'verbrauch':
+                    if ($realEstate->energiepassEnergieverbrauchkennwert)
+                    {
+                        $strValue = $realEstate->energiepassEnergieverbrauchkennwert;
+                    }
+                    break;
+            }
         }
 
         return $strValue;
