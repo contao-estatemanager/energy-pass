@@ -121,7 +121,7 @@ class Energy
     {
         $strValue = '';
 
-        if (isset($realEstate->energiepassEpart))
+        if (null !== $realEstate->energiepassEpart)
         {
             switch (strtolower($realEstate->energiepassEpart))
             {
